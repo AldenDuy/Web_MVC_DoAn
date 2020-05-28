@@ -13,6 +13,9 @@ namespace WebHocTiengAnh.Controllers
         {
             return View();
         }
-        
+        public ActionResult Course()
+        {
+            return View();
+        }
     }
 }
