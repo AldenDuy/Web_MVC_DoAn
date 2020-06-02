@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DAWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="Link" Type="nvarchar" MaxLength="100" />
+          <Property Name="Meta" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="Datebegin" Type="datetime" />
+          <Property Name="Images" Type="varchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descriptions" Type="nvarchar" MaxLength="100" />
+          <Property Name="Level" Type="nvarchar" MaxLength="20" />
+          <Property Name="Order" Type="int" />
+        </EntityType>
+        <EntityType Name="CourseDetails">
+          <Key>
+            <PropertyRef Name="IdUser" />
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grammar">
+          <Key>
+            <PropertyRef Name="GrammarID" />
+          </Key>
+          <Property Name="Link" Type="nvarchar" MaxLength="100" />
+          <Property Name="Meta" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="Datebegin" Type="datetime" />
+          <Property Name="Images" Type="varchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="GrammarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descriptions" Type="nvarchar" MaxLength="100" />
+          <Property Name="Level" Type="nvarchar" MaxLength="20" />
+          <Property Name="Order" Type="int" />
+        </EntityType>
+        <EntityType Name="GrammarDetails">
+          <Key>
+            <PropertyRef Name="IdUser" />
+            <PropertyRef Name="GrammarID" />
+          </Key>
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="GrammarID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Link" Type="nvarchar" MaxLength="100" />
+          <Property Name="Meta" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="Datebegin" Type="datetime" />
+          <Property Name="Order" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="New">
+          <Key>
+            <PropertyRef Name="IdNew" />
+          </Key>
+          <Property Name="IdNew" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="30" />
+          <Property Name="Decription" Type="nvarchar" MaxLength="200" />
+          <Property Name="Link" Type="nvarchar" MaxLength="100" />
+          <Property Name="Meta" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="Datebegin" Type="datetime" />
+          <Property Name="Images" Type="varchar(max)" />
+          <Property Name="Order" Type="int" />
+          <Property Name="TitleSp" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="Link" Type="nvarchar" MaxLength="100" />
+          <Property Name="Meta" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="Datebegin" Type="datetime" />
+          <Property Name="Images" Type="varchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descriptions" Type="nvarchar" MaxLength="100" />
+          <Property Name="Level" Type="nvarchar" MaxLength="20" />
+          <Property Name="Order" Type="int" />
+        </EntityType>
+        <EntityType Name="SkillDetails">
+          <Key>
+            <PropertyRef Name="IdUser" />
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="SkillID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Email" Type="nvarchar" MaxLength="30" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" />
+          <Property Name="Password" Type="nvarchar" MaxLength="30" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+          <Property Name="Link" Type="nvarchar" MaxLength="100" />
+          <Property Name="Meta" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="Datebegin" Type="datetime" />
+          <Property Name="Images" Type="varchar(max)" />
+          <Property Name="Order" Type="int" />
+        </EntityType>
+        <EntityType Name="Vocabulary">
+          <Key>
+            <PropertyRef Name="TopicID" />
+          </Key>
+          <Property Name="Link" Type="nvarchar" MaxLength="100" />
+          <Property Name="Meta" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="Datebegin" Type="datetime" />
+          <Property Name="Images" Type="varchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="TopicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descriptions" Type="nvarchar" MaxLength="100" />
+          <Property Name="Order" Type="int" />
+        </EntityType>
+        <EntityType Name="VocabularyDetails">
+          <Key>
+            <PropertyRef Name="IdUser" />
+            <PropertyRef Name="TopicID" />
+          </Key>
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="TopicID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CourseDet__Cours__4BAC3F29">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="CourseDetails" Type="Self.CourseDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="CourseDetails">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CourseDet__IdUse__48CFD27E">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="CourseDetails" Type="Self.CourseDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="CourseDetails">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GrammarDe__Gramm__4D94879B">
+          <End Role="Grammar" Type="Self.Grammar" Multiplicity="1" />
+          <End Role="GrammarDetails" Type="Self.GrammarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grammar">
+              <PropertyRef Name="GrammarID" />
+            </Principal>
+            <Dependent Role="GrammarDetails">
+              <PropertyRef Name="GrammarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GrammarDe__IdUse__49C3F6B7">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="GrammarDetails" Type="Self.GrammarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="GrammarDetails">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SkillDeta__IdUse__47DBAE45">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SkillDetails" Type="Self.SkillDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="SkillDetails">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SkillDeta__Skill__4CA06362">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="SkillDetails" Type="Self.SkillDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="SkillID" />
+            </Principal>
+            <Dependent Role="SkillDetails">
+              <PropertyRef Name="SkillID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vocabular__IdUse__4AB81AF0">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="VocabularyDetails" Type="Self.VocabularyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="VocabularyDetails">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vocabular__Topic__4E88ABD4">
+          <End Role="Vocabulary" Type="Self.Vocabulary" Multiplicity="1" />
+          <End Role="VocabularyDetails" Type="Self.VocabularyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vocabulary">
+              <PropertyRef Name="TopicID" />
+            </Principal>
+            <Dependent Role="VocabularyDetails">
+              <PropertyRef Name="TopicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DAWebModelStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseDetails" EntityType="Self.CourseDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grammar" EntityType="Self.Grammar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrammarDetails" EntityType="Self.GrammarDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="New" EntityType="Self.New" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SkillDetails" EntityType="Self.SkillDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vocabulary" EntityType="Self.Vocabulary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VocabularyDetails" EntityType="Self.VocabularyDetails" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CourseDet__Cours__4BAC3F29" Association="Self.FK__CourseDet__Cours__4BAC3F29">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="CourseDetails" EntitySet="CourseDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CourseDet__IdUse__48CFD27E" Association="Self.FK__CourseDet__IdUse__48CFD27E">
+            <End Role="User" EntitySet="User" />
+            <End Role="CourseDetails" EntitySet="CourseDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GrammarDe__Gramm__4D94879B" Association="Self.FK__GrammarDe__Gramm__4D94879B">
+            <End Role="Grammar" EntitySet="Grammar" />
+            <End Role="GrammarDetails" EntitySet="GrammarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GrammarDe__IdUse__49C3F6B7" Association="Self.FK__GrammarDe__IdUse__49C3F6B7">
+            <End Role="User" EntitySet="User" />
+            <End Role="GrammarDetails" EntitySet="GrammarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SkillDeta__IdUse__47DBAE45" Association="Self.FK__SkillDeta__IdUse__47DBAE45">
+            <End Role="User" EntitySet="User" />
+            <End Role="SkillDetails" EntitySet="SkillDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SkillDeta__Skill__4CA06362" Association="Self.FK__SkillDeta__Skill__4CA06362">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="SkillDetails" EntitySet="SkillDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vocabular__IdUse__4AB81AF0" Association="Self.FK__Vocabular__IdUse__4AB81AF0">
+            <End Role="User" EntitySet="User" />
+            <End Role="VocabularyDetails" EntitySet="VocabularyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vocabular__Topic__4E88ABD4" Association="Self.FK__Vocabular__Topic__4E88ABD4">
+            <End Role="Vocabulary" EntitySet="Vocabulary" />
+            <End Role="VocabularyDetails" EntitySet="VocabularyDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DAWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Datebegin" Type="DateTime" Precision="3" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Order" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="Self.CourseDetails" FromRole="Course" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Grammar">
+          <Key>
+            <PropertyRef Name="GrammarID" />
+          </Key>
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Datebegin" Type="DateTime" Precision="3" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GrammarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Order" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="Self.GrammarDetails" FromRole="Grammar" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Datebegin" Type="DateTime" Precision="3" />
+          <Property Name="Order" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="New">
+          <Key>
+            <PropertyRef Name="IdNew" />
+          </Key>
+          <Property Name="IdNew" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Decription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Datebegin" Type="DateTime" Precision="3" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Order" Type="Int32" />
+          <Property Name="TitleSp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Datebegin" Type="DateTime" Precision="3" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Order" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="Self.SkillDetails" FromRole="Skill" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="Int32" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Datebegin" Type="DateTime" Precision="3" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Order" Type="Int32" />
+          <NavigationProperty Name="Courses" Relationship="Self.CourseDetails" FromRole="User" ToRole="Course" />
+          <NavigationProperty Name="Grammars" Relationship="Self.GrammarDetails" FromRole="User" ToRole="Grammar" />
+          <NavigationProperty Name="Skills" Relationship="Self.SkillDetails" FromRole="User" ToRole="Skill" />
+          <NavigationProperty Name="Vocabularies" Relationship="Self.VocabularyDetails" FromRole="User" ToRole="Vocabulary" />
+        </EntityType>
+        <EntityType Name="Vocabulary">
+          <Key>
+            <PropertyRef Name="TopicID" />
+          </Key>
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Datebegin" Type="DateTime" Precision="3" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TopicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Order" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="Self.VocabularyDetails" FromRole="Vocabulary" ToRole="User" />
+        </EntityType>
+        <Association Name="CourseDetails">
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+        </Association>
+        <Association Name="GrammarDetails">
+          <End Role="Grammar" Type="Self.Grammar" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+        </Association>
+        <Association Name="SkillDetails">
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+        </Association>
+        <Association Name="VocabularyDetails">
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <End Role="Vocabulary" Type="Self.Vocabulary" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DAWebEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="Grammars" EntityType="Self.Grammar" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="News" EntityType="Self.New" />
+          <EntitySet Name="Skills" EntityType="Self.Skill" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Vocabularies" EntityType="Self.Vocabulary" />
+          <AssociationSet Name="CourseDetails" Association="Self.CourseDetails">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="GrammarDetails" Association="Self.GrammarDetails">
+            <End Role="Grammar" EntitySet="Grammars" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="SkillDetails" Association="Self.SkillDetails">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Skill" EntitySet="Skills" />
+          </AssociationSet>
+          <AssociationSet Name="VocabularyDetails" Association="Self.VocabularyDetails">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Vocabulary" EntitySet="Vocabularies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DAWebModelStoreContainer" CdmEntityContainer="DAWebEntities">
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="DAWebModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grammars">
+            <EntityTypeMapping TypeName="DAWebModel.Grammar">
+              <MappingFragment StoreEntitySet="Grammar">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GrammarID" ColumnName="GrammarID" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="DAWebModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="DAWebModel.New">
+              <MappingFragment StoreEntitySet="New">
+                <ScalarProperty Name="IdNew" ColumnName="IdNew" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Decription" ColumnName="Decription" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="TitleSp" ColumnName="TitleSp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="DAWebModel.Skill">
+              <MappingFragment StoreEntitySet="Skill">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DAWebModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vocabularies">
+            <EntityTypeMapping TypeName="DAWebModel.Vocabulary">
+              <MappingFragment StoreEntitySet="Vocabulary">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TopicID" ColumnName="TopicID" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CourseDetails" TypeName="DAWebModel.CourseDetails" StoreEntitySet="CourseDetails">
+            <EndProperty Name="Course">
+              <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+            </EndProperty>
+            <EndProperty Name="User">
+              <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="GrammarDetails" TypeName="DAWebModel.GrammarDetails" StoreEntitySet="GrammarDetails">
+            <EndProperty Name="Grammar">
+              <ScalarProperty Name="GrammarID" ColumnName="GrammarID" />
+            </EndProperty>
+            <EndProperty Name="User">
+              <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="SkillDetails" TypeName="DAWebModel.SkillDetails" StoreEntitySet="SkillDetails">
+            <EndProperty Name="User">
+              <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+            </EndProperty>
+            <EndProperty Name="Skill">
+              <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="VocabularyDetails" TypeName="DAWebModel.VocabularyDetails" StoreEntitySet="VocabularyDetails">
+            <EndProperty Name="User">
+              <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+            </EndProperty>
+            <EndProperty Name="Vocabulary">
+              <ScalarProperty Name="TopicID" ColumnName="TopicID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

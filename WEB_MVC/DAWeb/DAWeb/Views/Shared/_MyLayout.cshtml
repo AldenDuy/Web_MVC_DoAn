@@ -1,0 +1,189 @@
+﻿<!--
+Author: w3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <title>Provision Education Category Bootstrap Responsive web Template | Home :: W3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Provision Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+    </script>
+    <!-- Custom Theme files -->
+    <link href="~/Content/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="~/Content/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="~Content/css/font-awesome.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+
+<body>
+    <!-- main -->
+    <div class="main-content" id="home">
+        <!-- header -->
+
+        <header>
+            <div class="container-fluid">
+
+                <!-- nav -->
+                <nav class="py-md-4 py-3 d-lg-flex nav_w3pvt">
+                    <div id="logo">
+                        <h1>@Html.ActionLink("DHP", "Index", "Home")</h1>
+                    </div>
+                    <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+                    <input type="checkbox" id="drop" />
+
+                    @{ Html.RenderAction("getMenu", "Menu");}
+                    
+
+                </nav>
+                <!-- //nav -->
+            </div>
+        </header>
+        <!-- //header -->
+        <!-- banner -->
+        <div class="banner-content-w3pvt">
+            <div class="banner-w3layouts-info text-center">
+                <h3>Tất cả sự thành công đều bắt đầu với một nền giáo dục tốt</h3>
+                <form class="banner-form" method="post" action="#">
+                    <input type="email" class="form-control" id="email" placeholder="Email" name="email" required="">
+                    <button type="submit" class="btn btn-default">Đăng nhập</button>
+                </form>
+                <form class="banner-form" method="post" action="#">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password" required="">
+                    <button type="submit" class="btn btn-default">Đăng ký</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <section class="testimonials py-5" id="test">
+        <div class="container py-3">
+            <h3 class="tittle-w3layouts text-center mt-3">See what people are saying</h3>
+            <div class="testimonials_grid mx-auto text-center row px-lg-5 mt-5">
+
+                <div class="col-md-3 testi_grid text-md-center">
+                    <img src="~/Content/images/test.jpg" alt=" " class="img-fluid">
+                </div>
+                <div class="col-md-9 testi_grid text-left">
+                    <span class="fa fa-quote-left" aria-hidden="true"></span>
+                    <p class="sub-test pr-lg-5">
+                        Integer sit amet mattis quam, sit amet ultricies velit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod possimus, omnis voluptas.
+                        <h5>Thomas Carl</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//testimonials-->
+    <!-- footer -->
+    <footer class="footer-content text-center py-5">
+        <div class="container py-md-3">
+            <!-- logo -->
+            <h2 class="logo2 text-center">
+                <a href="index.html">
+                    DHP
+                </a>
+            </h2>
+            <!-- //logo -->
+            <!-- address -->
+            <div class="contact-left-footer mt-md-4">
+                <ul>
+                    <li>
+                        <p>
+                            <span class="fa fa-map-marker mr-2"></span>DHP Online Education
+                        </p>
+                    </li>
+                    <li class="mx-4">
+                        <p>
+                            <span class="fa fa-phone mr-2"></span> + 123456789.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="text-wh">
+                            <span class="fa fa-envelope-open mr-2"></span>
+                            <a href="mailto:info@example.com">dhponlineeducation@gmail.com</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <!-- //address -->
+            <!-- social icons -->
+            <div class="footer-w3pvt-copy-social my-4">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-facebook-square"></span>
+                        </a>
+                    </li>
+                    <li class="mx-2">
+                        <a href="#">
+                            <span class="fa fa-twitter-square"></span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <span class="fa fa-google-plus-square"></span>
+                        </a>
+                    </li>
+                    <li class="mx-2">
+                        <a href="#">
+                            <span class="fa fa-linkedin-square"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-rss-square"></span>
+                        </a>
+                    </li>
+                    <li class="ml-2">
+                        <a href="#">
+                            <span class="fa fa-pinterest-square"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //social icons -->
+            <!-- copyright -->
+            <div class="w3layouts-copy text-center">
+                <p class="text-da">
+                    DHP Online Education | Design by DHP Designer
+                    <a href="http://w3layouts.com/">.....</a>
+                </p>
+            </div>
+            <!-- //copyright -->
+            <!-- move top icon -->
+            <div class="move-top text-center mt-3">
+                <a href="#home" class="move-top"><span class="fa fa-angle-double-up" aria-hidden="true"></span></a>
+            </div>
+            <!-- //move top icon -->
+        </div>
+    </footer>
+    <!-- //footer -->
+
+
+
+
+</body>
+
+</html>

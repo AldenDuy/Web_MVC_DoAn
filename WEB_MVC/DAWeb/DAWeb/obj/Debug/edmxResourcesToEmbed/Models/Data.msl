@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DAWebModelStoreContainer" CdmEntityContainer="DAWebEntities">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="DAWebModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grammars">
+      <EntityTypeMapping TypeName="DAWebModel.Grammar">
+        <MappingFragment StoreEntitySet="Grammar">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GrammarID" ColumnName="GrammarID" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="DAWebModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="DAWebModel.New">
+        <MappingFragment StoreEntitySet="New">
+          <ScalarProperty Name="IdNew" ColumnName="IdNew" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Decription" ColumnName="Decription" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="TitleSp" ColumnName="TitleSp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="DAWebModel.Skill">
+        <MappingFragment StoreEntitySet="Skill">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DAWebModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vocabularies">
+      <EntityTypeMapping TypeName="DAWebModel.Vocabulary">
+        <MappingFragment StoreEntitySet="Vocabulary">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TopicID" ColumnName="TopicID" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CourseDetails" TypeName="DAWebModel.CourseDetails" StoreEntitySet="CourseDetails">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GrammarDetails" TypeName="DAWebModel.GrammarDetails" StoreEntitySet="GrammarDetails">
+      <EndProperty Name="Grammar">
+        <ScalarProperty Name="GrammarID" ColumnName="GrammarID" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SkillDetails" TypeName="DAWebModel.SkillDetails" StoreEntitySet="SkillDetails">
+      <EndProperty Name="User">
+        <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+      </EndProperty>
+      <EndProperty Name="Skill">
+        <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="VocabularyDetails" TypeName="DAWebModel.VocabularyDetails" StoreEntitySet="VocabularyDetails">
+      <EndProperty Name="User">
+        <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+      </EndProperty>
+      <EndProperty Name="Vocabulary">
+        <ScalarProperty Name="TopicID" ColumnName="TopicID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

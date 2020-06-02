@@ -1,0 +1,9 @@
+﻿@model IEnumerable<DAWeb.Models.Menu>
+
+    <ul class="menu mt-lg-3 ml-auto">
+        @foreach (var i in Model)
+        {
+            <li><a class="active" href="@ViewBag.meta/@i.Meta/">@i.Name</a></li>
+        }
+    </ul>
+        

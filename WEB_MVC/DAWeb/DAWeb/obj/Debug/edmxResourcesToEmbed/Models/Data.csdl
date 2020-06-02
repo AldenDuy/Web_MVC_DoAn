@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DAWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="Datebegin" Type="DateTime" Precision="3" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.CourseDetails" FromRole="Course" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Grammar">
+    <Key>
+      <PropertyRef Name="GrammarID" />
+    </Key>
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="Datebegin" Type="DateTime" Precision="3" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GrammarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.GrammarDetails" FromRole="Grammar" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="Datebegin" Type="DateTime" Precision="3" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="New">
+    <Key>
+      <PropertyRef Name="IdNew" />
+    </Key>
+    <Property Name="IdNew" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Decription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="Datebegin" Type="DateTime" Precision="3" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="TitleSp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="Datebegin" Type="DateTime" Precision="3" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.SkillDetails" FromRole="Skill" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="Int32" />
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="Datebegin" Type="DateTime" Precision="3" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="Courses" Relationship="Self.CourseDetails" FromRole="User" ToRole="Course" />
+    <NavigationProperty Name="Grammars" Relationship="Self.GrammarDetails" FromRole="User" ToRole="Grammar" />
+    <NavigationProperty Name="Skills" Relationship="Self.SkillDetails" FromRole="User" ToRole="Skill" />
+    <NavigationProperty Name="Vocabularies" Relationship="Self.VocabularyDetails" FromRole="User" ToRole="Vocabulary" />
+  </EntityType>
+  <EntityType Name="Vocabulary">
+    <Key>
+      <PropertyRef Name="TopicID" />
+    </Key>
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="Datebegin" Type="DateTime" Precision="3" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TopicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.VocabularyDetails" FromRole="Vocabulary" ToRole="User" />
+  </EntityType>
+  <Association Name="CourseDetails">
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+  </Association>
+  <Association Name="GrammarDetails">
+    <End Role="Grammar" Type="Self.Grammar" Multiplicity="*" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+  </Association>
+  <Association Name="SkillDetails">
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+  </Association>
+  <Association Name="VocabularyDetails">
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <End Role="Vocabulary" Type="Self.Vocabulary" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DAWebEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="Grammars" EntityType="Self.Grammar" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="News" EntityType="Self.New" />
+    <EntitySet Name="Skills" EntityType="Self.Skill" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Vocabularies" EntityType="Self.Vocabulary" />
+    <AssociationSet Name="CourseDetails" Association="Self.CourseDetails">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="GrammarDetails" Association="Self.GrammarDetails">
+      <End Role="Grammar" EntitySet="Grammars" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="SkillDetails" Association="Self.SkillDetails">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Skill" EntitySet="Skills" />
+    </AssociationSet>
+    <AssociationSet Name="VocabularyDetails" Association="Self.VocabularyDetails">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Vocabulary" EntitySet="Vocabularies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

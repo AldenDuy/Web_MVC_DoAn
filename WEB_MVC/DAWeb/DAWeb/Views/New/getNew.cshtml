@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DAWeb.Models.New>
+
+    <div class="container py-md-4">
+        <h3 class="tittle-w3layouts two text-center">Sống và trải nghiệm</h3>
+        @foreach (var i in Model)
+        {
+           
+            <div class="row mid-grids my-lg-5 py-lg-5">
+
+                <div class="col-md-7 content-left-bottom entry-w3layouts-info text-left mt-3">
+                    <h5 class="mt-1">@i.Title</h5>
+                    <h4>@i.TitleSp</h4>
+                    <p class="mt-2 text-left">@i.Decription</p>
+
+                </div>
+                <div class="col-md-5 content-w3pvt-img">
+                    <img src="~/Content/images/@i.Images" alt="" class="img-fluid"><br />
+                </div>
+
+            </div>
+        }
+    </div>
