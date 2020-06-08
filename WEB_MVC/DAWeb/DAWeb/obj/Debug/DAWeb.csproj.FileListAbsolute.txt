@@ -81,3 +81,5 @@ D:\Web_MVC_DoAn\WEB_MVC\DAWeb\DAWeb\obj\Debug\DAWeb.csproj.CopyComplete
 D:\Web_MVC_DoAn\WEB_MVC\DAWeb\DAWeb\obj\Debug\DAWeb.dll
 D:\Web_MVC_DoAn\WEB_MVC\DAWeb\DAWeb\obj\Debug\DAWeb.pdb
 D:\Web_MVC_DoAn\WEB_MVC\DAWeb\DAWeb\obj\Debug\DAWeb.csprojAssemblyReference.cache
+D:\Web_MVC_DoAn\WEB_MVC\DAWeb\DAWeb\bin\CKFinder.dll
+D:\Web_MVC_DoAn\WEB_MVC\DAWeb\DAWeb\bin\CKFinder.pdb

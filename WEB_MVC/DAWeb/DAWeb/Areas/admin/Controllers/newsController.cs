@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DAWeb.Models;
+using DAWeb.Help;
 
 namespace DAWeb.Areas.admin.Controllers
 {
@@ -57,7 +58,7 @@ namespace DAWeb.Areas.admin.Controllers
                 if (img != null)
                 {
                     filename = img.FileName;
-                    path = Path.Combine(Server.MapPath("~/ContentAdmin/upload/img/news"), filename);
+                    path = Path.Combine(Server.MapPath("~/ContentAdmin/upload/img"), filename);
                     img.SaveAs(path);
                     news.Images = filename;
                 }
@@ -95,15 +96,36 @@ namespace DAWeb.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdNew,Title,Decription,Link,Meta,Hide,Datebegin,Images,Order,TitleSp")] New @new)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "IdNew,Title,Decription,Link,Meta,Hide,Datebegin,Images,Order,TitleSp")] New news, HttpPostedFileBase img)
         {
+            var path = "";
+            var filename = "";
+            New temp = getById(news.IdNew);
             if (ModelState.IsValid)
             {
-                db.Entry(@new).State = EntityState.Modified;
+                if(img != null)
+                {
+                    filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + img.FileName;
+                    path = Path.Combine(Server.MapPath("~/ContentAdmin/upload/img"), filename);
+                    img.SaveAs(path);
+                    temp.Images = filename;
+                }
+                temp.Title = news.Title;
+                temp.Decription = news.Decription;
+                temp.Hide = news.Hide;
+                temp.Order = news.Order;
+                temp.Meta = Functions.ConvertToUnSign(news.Meta);
+                db.Entry(temp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(@new);
+            return View(news);
+        }
+
+        public New getById(long idNew)
+        {
+            return db.News.Where(x => x.IdNew == idNew).FirstOrDefault();
         }
 
         // GET: admin/news/Delete/5

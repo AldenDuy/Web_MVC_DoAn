@@ -81,7 +81,7 @@
     <Property Name="Meta" Type="nvarchar" MaxLength="100" />
     <Property Name="Hide" Type="bit" />
     <Property Name="Datebegin" Type="datetime" />
-    <Property Name="Images" Type="varchar(max)" />
+    <Property Name="Media" Type="varchar(max)" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descriptions" Type="nvarchar" MaxLength="100" />

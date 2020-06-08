@@ -24,7 +24,7 @@ namespace DAWeb.Models
         public string Meta { get; set; }
         public Nullable<bool> Hide { get; set; }
         public Nullable<System.DateTime> Datebegin { get; set; }
-        public string Images { get; set; }
+        public string Media { get; set; }
         public string Name { get; set; }
         public int SkillID { get; set; }
         public string Descriptions { get; set; }

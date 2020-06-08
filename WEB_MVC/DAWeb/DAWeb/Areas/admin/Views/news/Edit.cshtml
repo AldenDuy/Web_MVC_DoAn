@@ -6,8 +6,7 @@
 }
 
 <h2>Edit</h2>
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "News", FormMethod.Post, new { enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     
@@ -50,12 +49,12 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Hide, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Hiển thị", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Hide)
-                    @Html.ValidationMessageFor(model => model.Hide, "", new { @class = "text-danger" })
-                </div>
+                @{ 
+                    bool hide = (Model.Hide.GetValueOrDefault(false) ? true : false);
+                }
+                @Html.CheckBoxFor(model => hide)
             </div>
         </div>
 
@@ -68,10 +67,12 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Images, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Images, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
+            @Html.Label("Hình đại diện", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                <input type="file" name="img" id="img" accept=".jpg, .png, .gif, .jpeg, .bmp" />
+            </div>
+            <div class="col-md-4">
+                <img src="~/Areas/admin/ContentAdmin/upload/img/@Model.Images" width="100px"/>
             </div>
         </div>
 

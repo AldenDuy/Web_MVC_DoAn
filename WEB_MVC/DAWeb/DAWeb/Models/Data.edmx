@@ -86,7 +86,7 @@
           <Property Name="Meta" Type="nvarchar" MaxLength="100" />
           <Property Name="Hide" Type="bit" />
           <Property Name="Datebegin" Type="datetime" />
-          <Property Name="Images" Type="varchar(max)" />
+          <Property Name="Media" Type="varchar(max)" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descriptions" Type="nvarchar" MaxLength="100" />
@@ -354,7 +354,7 @@
           <Property Name="Meta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Hide" Type="Boolean" />
           <Property Name="Datebegin" Type="DateTime" Precision="3" />
-          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Media" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descriptions" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -514,7 +514,7 @@
                 <ScalarProperty Name="Meta" ColumnName="Meta" />
                 <ScalarProperty Name="Hide" ColumnName="Hide" />
                 <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
-                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Media" ColumnName="Media" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="SkillID" ColumnName="SkillID" />
                 <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />

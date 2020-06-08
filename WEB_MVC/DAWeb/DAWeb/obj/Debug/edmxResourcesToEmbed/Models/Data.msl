@@ -69,7 +69,7 @@
           <ScalarProperty Name="Meta" ColumnName="Meta" />
           <ScalarProperty Name="Hide" ColumnName="Hide" />
           <ScalarProperty Name="Datebegin" ColumnName="Datebegin" />
-          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Media" ColumnName="Media" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="SkillID" ColumnName="SkillID" />
           <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />

@@ -1,16 +1,11 @@
-﻿@model IEnumerable<DAWeb.Models.Menu>
+﻿@model IEnumerable<DAWeb.Models.Vocabulary>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/admin/Views/Shared/_MyLayoutAdmin.cshtml";
 }
 
-@section _Header
-{
-    <link href="~/Areas/admin/ContentAdmin/vendor/datatables/dataTables.bootstrap4.css"   rel="stylesheet" /> 
-    <link href="~/Areas/admin/ContentAdmin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-}
-<h2>Menu</h2>
+<h2>Từ vựng</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -30,10 +25,16 @@
             @Html.DisplayNameFor(model => model.Datebegin)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Order)
+            @Html.DisplayNameFor(model => model.Images)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descriptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order)
         </th>
         <th></th>
     </tr>
@@ -53,28 +54,23 @@
             @Html.DisplayFor(modelItem => item.Datebegin)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Order)
+            @Html.DisplayFor(modelItem => item.Images)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => item.Descriptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TopicID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TopicID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TopicID })
         </td>
     </tr>
-}@section _Footer 
-{
-    <script src="~/Areas/admin/ContentAdmin/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="~/Areas/admin/ContentAdmin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="~/Areas/admin/ContentAdmin/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(funtion(){
-            $(#dataTable- example).DataTable({
-                responsive: true
-            });
-        });
-    </script>
 }
+
 </table>

@@ -134,9 +134,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\CoursesController.cs" />
     <Compile Include="Areas\admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\admin\Controllers\GrammarsController.cs" />
     <Compile Include="Areas\admin\Controllers\menusController.cs" />
     <Compile Include="Areas\admin\Controllers\newsController.cs" />
+    <Compile Include="Areas\admin\Controllers\SkillsController.cs" />
+    <Compile Include="Areas\admin\Controllers\VocabulariesController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\GrammarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -147,6 +151,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Help\Function.cs" />
     <Compile Include="Models\Course.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -1299,6 +1304,7 @@
     <Content Include="Areas\admin\ContentAdmin\js\demo\datatables-demo.js" />
     <Content Include="Areas\admin\ContentAdmin\js\sb-admin-2.js" />
     <Content Include="Areas\admin\ContentAdmin\js\sb-admin-2.min.js" />
+    <Content Include="Areas\admin\ContentAdmin\upload\img\logo.png" />
     <Content Include="Areas\admin\ContentAdmin\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Areas\admin\ContentAdmin\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Areas\admin\ContentAdmin\vendor\bootstrap\js\bootstrap.js" />
@@ -2990,13 +2996,6 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <EntityDeploy Include="Models\Data.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Data.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Data.edmx.diagram">
-      <DependentUpon>Data.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\ContentAdmin\scss\navs\_global.scss" />
     <Content Include="Areas\admin\ContentAdmin\scss\navs\_sidebar.scss" />
@@ -3196,6 +3195,33 @@
     <Content Include="Areas\admin\ContentAdmin\ckeditor\ckeditor\skins\moonocolor\readme.md" />
     <Content Include="Areas\admin\ContentAdmin\ckfinder\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Areas\admin\ContentAdmin\ckfinder\ckfinder\userfiles\.htaccess" />
+    <Content Include="Areas\admin\Views\Courses\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Courses\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Courses\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Courses\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Courses\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Skills\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Skills\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Skills\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Skills\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Skills\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Grammars\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Grammars\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Grammars\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Grammars\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Grammars\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Vocabularies\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Vocabularies\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Vocabularies\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Vocabularies\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Vocabularies\Index.cshtml" />
+    <EntityDeploy Include="Models\Data.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Data.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Data.edmx.diagram">
+      <DependentUpon>Data.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
