@@ -19,7 +19,7 @@ namespace DAWeb
             {
                 { "type", "trang-chu"}
             },
-            new[] { "DAWeb.Controllers" });
+            namespaces: new[] { "DAWeb.Controllers" });
 
             routes.MapRoute("Course", "{type}/{meta}",
             new { controller = "Course", action = "getCourse", meta = UrlParameter.Optional },
@@ -27,7 +27,7 @@ namespace DAWeb
             {
                 { "type", "khoa-hoc"}
             },
-            new[] { "DAWeb.Controllers" });
+            namespaces: new[] { "DAWeb.Controllers" });
 
             routes.MapRoute("Skill", "{type}/{meta}",
             new { controller = "Skill", action = "getSkill", meta = UrlParameter.Optional },
@@ -35,7 +35,7 @@ namespace DAWeb
             {
                 { "type", "ky-nang"}
             },
-            new[] { "DAWeb.Controllers" });
+            namespaces: new[] { "DAWeb.Controllers" });
 
             routes.MapRoute("Grammar", "{type}/{meta}",
             new { controller = "Grammar", action = "getGrammar", meta = UrlParameter.Optional },
@@ -43,7 +43,7 @@ namespace DAWeb
             {
                 { "type", "ngu-phap"}
             },
-            new[] { "DAWeb.Controllers" });
+            namespaces: new[] { "DAWeb.Controllers" });
 
             routes.MapRoute("Vocabulary", "{type}/{meta}",
             new { controller = "Vocabulary", action = "getVocabulary", meta = UrlParameter.Optional },
@@ -51,7 +51,7 @@ namespace DAWeb
             {
                 { "type", "tu-vung"}
             },
-            new[] { "DAWeb.Controllers" }); 
+            namespaces: new[] { "DAWeb.Controllers" }); 
 
             routes.MapRoute(
                 name: "Default",
