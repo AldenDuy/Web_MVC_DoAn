@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DAWeb.Help;
 using DAWeb.Models;
 
 namespace DAWeb.Areas.admin.Controllers
@@ -46,10 +48,25 @@ namespace DAWeb.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Link,Meta,Hide,Datebegin,Images,Name,SkillID,Descriptions,Level,Order")] Skill skill)
+        public ActionResult Create([Bind(Include = "Link,Meta,Hide,Datebegin,Media,Name,SkillID,Descriptions,Level,Order")] Skill skill, HttpPostedFile audio)
         {
+            var path = "";
+            var filename = "";
             if (ModelState.IsValid)
             {
+                if (audio != null)
+                {
+                    filename = audio.FileName;
+                    path = Path.Combine(Server.MapPath("~/ContentAdmin/upload/audio"), filename);
+                    audio.SaveAs(path);
+                    skill.Media = filename;
+                }
+                else
+                {
+                    skill.Media = "1.+Thank+you,+Mom.mp3";
+                }
+                skill.Datebegin = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                skill.Meta = Functions.ConvertToUnSign(skill.Name);
                 db.Skills.Add(skill);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,7 +95,7 @@ namespace DAWeb.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Link,Meta,Hide,Datebegin,Images,Name,SkillID,Descriptions,Level,Order")] Skill skill)
+        public ActionResult Edit([Bind(Include = "Link,Meta,Hide,Datebegin,Media,Name,SkillID,Descriptions,Level,Order")] Skill skill)
         {
             if (ModelState.IsValid)
             {

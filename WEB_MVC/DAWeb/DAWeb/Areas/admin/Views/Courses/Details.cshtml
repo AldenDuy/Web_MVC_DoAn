@@ -5,87 +5,169 @@
     Layout = "~/Areas/admin/Views/Shared/_MyLayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Link)
-        </dt>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                Chi tiết Tin tức
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Link)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Meta)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Images)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Meta)
-        </dd>
+                    <dd>
+                        <img src="~/Content/upload/img/news/@Model.Images" width="150px" />
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Hide)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Descriptions)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Hide)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Descriptions)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Datebegin)
-        </dt>
+                   
 
-        <dd>
-            @Html.DisplayFor(model => model.Datebegin)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Meta)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Images)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Meta)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Images)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Hide)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+                    <dd>
+                        @(Model.Hide.GetValueOrDefault(false) ? "Hiển thị" : "Ẩn")
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Order)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descriptions)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Order)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descriptions)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Datebegin)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Level)
-        </dt>
+                    <dd>
+                        @(Model.Datebegin.HasValue ? Model.Datebegin.Value.ToString("dd/MM/yyyy") : "")
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Level)
-        </dd>
+                </dl>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Order)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Order)
-        </dd>
-
-    </dl>
+                <p>
+                    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.CourseID }) |
+                    @Html.ActionLink("Quay lại", "Index")
+                </p>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<!-- /.row -->
+@*<h2>Details</h2>
+
+    <div>
+        <h4>Course</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Link)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Link)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Meta)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Meta)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Hide)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Hide)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Datebegin)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Datebegin)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Images)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Images)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Descriptions)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descriptions)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Level)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Level)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Order)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Order)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

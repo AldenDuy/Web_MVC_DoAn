@@ -58,7 +58,7 @@ namespace DAWeb.Areas.admin.Controllers
                 if (img != null)
                 {
                     filename = img.FileName;
-                    path = Path.Combine(Server.MapPath("~/ContentAdmin/upload/img"), filename);
+                    path = Path.Combine(Server.MapPath("~/Areas/admin/ContentAdmin/upload/img"), filename);
                     img.SaveAs(path);
                     news.Images = filename;
                 }
@@ -107,7 +107,7 @@ namespace DAWeb.Areas.admin.Controllers
                 if(img != null)
                 {
                     filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + img.FileName;
-                    path = Path.Combine(Server.MapPath("~/ContentAdmin/upload/img"), filename);
+                    path = Path.Combine(Server.MapPath("~/Areas/admin/ContentAdmin/upload/img"), filename);
                     img.SaveAs(path);
                     temp.Images = filename;
                 }
