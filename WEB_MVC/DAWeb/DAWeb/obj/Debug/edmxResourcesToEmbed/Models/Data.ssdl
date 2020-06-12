@@ -101,10 +101,10 @@
       <PropertyRef Name="IdUser" />
     </Key>
     <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="30" />
-    <Property Name="Email" Type="nvarchar" MaxLength="30" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="Phone" Type="varchar" MaxLength="30" />
-    <Property Name="Password" Type="nvarchar" MaxLength="30" />
+    <Property Name="Password" Type="nvarchar" MaxLength="1000" />
     <Property Name="Address" Type="nvarchar" MaxLength="50" />
     <Property Name="Level" Type="int" />
     <Property Name="Link" Type="nvarchar" MaxLength="100" />

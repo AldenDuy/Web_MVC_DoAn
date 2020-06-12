@@ -48,7 +48,8 @@ namespace DAWeb.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Link,Meta,Hide,Datebegin,Media,Name,SkillID,Descriptions,Level,Order")] Skill skill, HttpPostedFile audio)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Link,Meta,Hide,Datebegin,Media,Name,SkillID,Descriptions,Level,Order")] Skill skill, HttpPostedFileBase audio)
         {
             var path = "";
             var filename = "";
@@ -57,7 +58,7 @@ namespace DAWeb.Areas.admin.Controllers
                 if (audio != null)
                 {
                     filename = audio.FileName;
-                    path = Path.Combine(Server.MapPath("~/ContentAdmin/upload/audio"), filename);
+                    path = Path.Combine(Server.MapPath("~/Content/audio"), filename);
                     audio.SaveAs(path);
                     skill.Media = filename;
                 }

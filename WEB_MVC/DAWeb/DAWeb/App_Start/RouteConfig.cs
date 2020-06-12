@@ -17,10 +17,28 @@ namespace DAWeb
             new { controller = "Menu", action = "getMenu", meta = UrlParameter.Optional },
             new RouteValueDictionary
             {
-                { "type", "trang-chu"}
+                { "type", ""}
             },
-            namespaces: new[] { "DAWeb.Controllers" });
 
+            
+
+            namespaces: new[] { "DAWeb.Controllers" });
+            routes.MapRoute("Login", "{type}/{meta}",
+            new { controller = "Login", action = "IndexLogin", meta = UrlParameter.Optional },
+            new RouteValueDictionary
+            {
+                { "type", "dang-nhap"}
+            },
+
+             namespaces: new[] { "DAWeb.Controllers" });
+            routes.MapRoute("Register", "{type}/{meta}",
+            new { controller = "Login", action = "Register", meta = UrlParameter.Optional },
+            new RouteValueDictionary
+            {
+                { "type", "dang-ky"}
+            },
+
+            namespaces: new[] { "DAWeb.Controllers" });
             routes.MapRoute("Course", "{type}/{meta}",
             new { controller = "Course", action = "getCourse", meta = UrlParameter.Optional },
             new RouteValueDictionary

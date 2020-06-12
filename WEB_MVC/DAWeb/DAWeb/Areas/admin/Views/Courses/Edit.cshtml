@@ -35,10 +35,10 @@
                         <div class="form-group">
                             @Html.Label("Hình đại diện", htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-6">
-                                <input type="file" name="img" id="img" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+                                <input type="file" name="images" id="img" accept=".jpg,.png,.gif,.jpeg,.bmp" />
                             </div>
                             <div class="col-md-4">
-                                <img src="~/Areas/admin/ContentAdmin/upload/img/@Model.Images" width="100px" />
+                                <img src="~/Content/images/@Model.Images" width="100px" />
                             </div>
                         </div>
 

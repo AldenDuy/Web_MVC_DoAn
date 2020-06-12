@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DAWeb.Help;
 using DAWeb.Models;
 
 namespace DAWeb.Areas.admin.Controllers
@@ -46,10 +48,26 @@ namespace DAWeb.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Link,Meta,Hide,Datebegin,Images,Name,CourseID,Descriptions,Level,Order")] Course course)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Link,Meta,Hide,Datebegin,Images,Name,CourseID,Descriptions,Level,Order")] Course course, HttpPostedFileBase img)
         {
+            var path = "";
+            var filename = "";
             if (ModelState.IsValid)
             {
+                if (img != null)
+                {
+                    filename = img.FileName;
+                    path = Path.Combine(Server.MapPath("~/Content/images"), filename);
+                    img.SaveAs(path);
+                    course.Images = filename;
+                }
+                else
+                {
+                    course.Images = "logo.png";
+                }
+                course.Datebegin = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                course.Meta = Functions.ConvertToUnSign(course.Name);
                 db.Courses.Add(course);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,17 +96,36 @@ namespace DAWeb.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Link,Meta,Hide,Datebegin,Images,Name,CourseID,Descriptions,Level,Order")] Course course)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Link,Meta,Hide,Datebegin,Images,Name,CourseID,Descriptions,Level,Order")] Course course, HttpPostedFileBase img)
         {
+            var path = "";
+            var filename = "";
+            Course temp = getById(course.CourseID);
             if (ModelState.IsValid)
             {
-                db.Entry(course).State = EntityState.Modified;
+                if (img != null)
+                {
+                    filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + img.FileName;
+                    path = Path.Combine(Server.MapPath("~/Content/images"), filename);
+                    img.SaveAs(path);
+                    temp.Images = filename;
+                }
+                temp.Name = course.Name;
+                temp.Descriptions = course.Descriptions;
+                temp.Hide = course.Hide;
+                temp.Order = course.Order;
+                temp.Meta = Functions.ConvertToUnSign(course.Meta);
+                db.Entry(temp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(course);
         }
-
+        public Course getById(long coursesid)
+        {
+            return db.Courses.Where(x => x.CourseID == coursesid).FirstOrDefault();
+        }
         // GET: admin/Courses/Delete/5
         public ActionResult Delete(int? id)
         {

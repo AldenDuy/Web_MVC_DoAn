@@ -1064,7 +1064,7 @@ a.move-top span {
 
 @media(max-width:1366px) {
     .main-content {
-        min-height: 45em;
+        min-height: 100px;
     }
 
     .banner-w3layouts-info h3 {
@@ -1078,7 +1078,7 @@ a.move-top span {
 
 @media(max-width:1280px) {
     .main-content {
-        min-height: 41em;
+        min-height: 100px;
     }
 
     .banner-w3layouts-info {
@@ -1111,7 +1111,7 @@ a.move-top span {
     }
 
     .main-content {
-        min-height: 38em;
+        min-height: 100px;
     }
 
     .banner-content-w3pvt {
@@ -1216,7 +1216,7 @@ a.move-top span {
     }
 
     .main-content {
-        min-height: 32em;
+        min-height: 100px;
     }
 
     .banner-content-w3pvt {

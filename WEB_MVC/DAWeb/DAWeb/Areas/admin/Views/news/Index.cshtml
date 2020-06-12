@@ -74,7 +74,7 @@
                                     @Html.DisplayFor(modelItem => item.Title)
                                 </td>
                                 <td>
-                                    <img src="~/Areas/admin/ContentAdmin/upload/img/@item.Images" width="100px" />
+                                    <img src="~/Content/images/@item.Images" width="100px" />
                                 </td>
 
 
@@ -125,75 +125,3 @@
     </script>
 
 }
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayName("Tiêu đề")
-        </th>
-        <th>
-            @Html.DisplayName("Phụ đề")
-        </th>
-        <th>
-            @Html.DisplayName("Hình ảnh")
-        </th>
-        <th>
-            @Html.DisplayName("Mô tả")
-        </th>
-        <th>
-            @Html.DisplayName("Hiển thị")
-        </th>
-        <th>
-            @Html.DisplayName("Ngày chỉnh sửa")
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Link)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Meta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Order)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TitleSp)
-            </td>
-            <td>
-                tml.DisplayFor(modelItem => item.Images)
-                <img src="~/Content/images/@item.Images" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Decription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Hide)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Datebegin)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Link)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Meta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Order)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.IdNew }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.IdNew }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.IdNew })
-                </td>
-                </tr>
-                }
-
-                </table>*@

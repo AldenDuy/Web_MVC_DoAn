@@ -106,10 +106,10 @@
             <PropertyRef Name="IdUser" />
           </Key>
           <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="30" />
-          <Property Name="Email" Type="nvarchar" MaxLength="30" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="varchar" MaxLength="30" />
-          <Property Name="Password" Type="nvarchar" MaxLength="30" />
+          <Property Name="Password" Type="nvarchar" MaxLength="1000" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" />
           <Property Name="Level" Type="int" />
           <Property Name="Link" Type="nvarchar" MaxLength="100" />
@@ -367,10 +367,10 @@
             <PropertyRef Name="IdUser" />
           </Key>
           <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Level" Type="Int32" />
           <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
