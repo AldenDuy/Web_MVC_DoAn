@@ -40,9 +40,10 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="@Url.Action("Index","Default")">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Trang chủ</span>
+
                 </a>
             </li>
 
@@ -91,6 +92,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Trang:</h6>
+                        <a class="collapse-item" href="@Url.Action("Index","Users")">User</a>
                         <a class="collapse-item" href="@Url.Action("Index","Menus")">Menu</a>
                         <a class="collapse-item" href="@Url.Action("Index","News")">Tin tức</a>
                         <a class="collapse-item" href="@Url.Action("Index","Courses")">Khóa học</a>

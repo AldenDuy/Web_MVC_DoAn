@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DAWeb.Models.Menu>
+
+
+    <ul class="menu mt-lg-3 ml-auto">
+
+        @foreach (var i in Model)
+        {
+            if (i.Id == 11 && i.Id == 12)
+            {
+                @i.Hide = true;
+                <li><a class="active" href="@ViewBag.meta/@i.Meta/">@i.Name</a></li> 
+            }
+
+        }
+    </ul>
+

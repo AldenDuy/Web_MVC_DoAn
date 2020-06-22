@@ -140,6 +140,7 @@
     <Compile Include="Areas\admin\Controllers\menusController.cs" />
     <Compile Include="Areas\admin\Controllers\newsController.cs" />
     <Compile Include="Areas\admin\Controllers\SkillsController.cs" />
+    <Compile Include="Areas\admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\admin\Controllers\VocabulariesController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\GrammarController.cs" />
@@ -3223,6 +3224,11 @@
     <Content Include="Models\Data.edmx.diagram">
       <DependentUpon>Data.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\admin\Views\Users\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Users\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Users\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Users\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3259,9 +3265,9 @@
     <Content Include="Views\Vocabulary\getVocabulary.cshtml" />
     <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Login\IndexLogin.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Logout.cshtml" />
+    <Content Include="Views\Menu\setMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,7 +9,7 @@
         <div class="col-lg-12">
             <div class="panel panel-red">
                 <div class="panel-heading">
-                    Chi tiết Tin tức
+                    Xóa ngữ pháp
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -27,7 +27,7 @@
                         </dt>
 
                         <dd>
-                            <img src="~/Areas/admin/ContentAdmin/upload/img/@Model.Images" width="150px" />
+                            <img src="~/Content/images/@Model.Images" width="150px" />
                         </dd>
 
                         <dt>
@@ -81,10 +81,15 @@
 
                     </dl>
 
-                    <p>
-                        @Html.ActionLink("Cập nhật", "Edit", new { id = Model.GrammarID }) |
-                        @Html.ActionLink("Quay lại", "Index")
-                    </p>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger" /> |
+                            @Html.ActionLink("Quay lại", "Index")
+                        </div>
+                    }
                 </div>
                 <!-- /.panel-body -->
             </div>

@@ -25,5 +25,13 @@ namespace DAWeb.Controllers
                 select t;
             return PartialView(v.ToList());
         }
+        public ActionResult setMenu()
+        {
+            var v = from t in _db.Menus
+                    where t.Hide == false
+                    orderby t.Order ascending
+                    select t;
+            return PartialView(v.ToList());
+        }
     }
 }

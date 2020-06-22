@@ -16,10 +16,6 @@ namespace DAWeb.Controllers
         private DAWebEntities _db = new DAWebEntities();
         public ActionResult Index()
         {
-            return View();
-        }
-        public ActionResult IndexLogin()
-        {
             if (Session["idUser"] != null)
             {
                 return View();
@@ -29,6 +25,7 @@ namespace DAWeb.Controllers
                 return RedirectToAction("Login");
             }
         }
+       
 
         public ActionResult Register()
         {
@@ -78,20 +75,27 @@ namespace DAWeb.Controllers
                     Session["FullName"] = data.FirstOrDefault().Name;
                     Session["Email"] = data.FirstOrDefault().Email;
                     Session["idUser"] = data.FirstOrDefault().IdUser;
-                    return RedirectToAction("IndexLogin");
+                    return RedirectToAction("Index");
+                    
                 }
                 else
                 {
                     ViewBag.error = "Login failed";
                     return RedirectToAction("Login");
                 }
+
             }
             return View();
         }
+        //public ActionResult Logout()
+        //{
+        //    return View();
+        //}
         public ActionResult Logout()
         {
-            Session.Clear();//remove session
-            return RedirectToAction("Login");
+            Session.Abandon();//remove session
+            return RedirectToAction("Index","Login");
+            
         }
 
 

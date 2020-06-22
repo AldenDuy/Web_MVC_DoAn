@@ -24,11 +24,18 @@ namespace DAWeb
 
             namespaces: new[] { "DAWeb.Controllers" });
             routes.MapRoute("Login", "{type}/{meta}",
-            new { controller = "Login", action = "IndexLogin", meta = UrlParameter.Optional },
+            new { controller = "Login", action = "Index", meta = UrlParameter.Optional },
             new RouteValueDictionary
             {
                 { "type", "dang-nhap"}
             },
+            //namespaces: new[] { "DAWeb.Controllers" });
+            //routes.MapRoute("Logout", "{type}/{meta}",
+            //new { controller = "Login", action = "Logout", meta = UrlParameter.Optional },
+            //new RouteValueDictionary
+            //{
+            //    { "type", "dang-xuat"}
+            //},
 
              namespaces: new[] { "DAWeb.Controllers" });
             routes.MapRoute("Register", "{type}/{meta}",
